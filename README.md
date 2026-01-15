@@ -47,12 +47,12 @@
 
     ```sh
     docker compose down
-    ```sh
+    ```
 -   Jalankan ulang
 
     ```sh
     docker compose up -d
-    ```sh
+    ```
 
 -   Cek data yg sebelumnya sudah dibuat
 
