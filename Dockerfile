@@ -21,7 +21,22 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 
 WORKDIR /var/www/html
 
+# --- TAMBAHKAN BAGIAN INI ---
+
+# 1. Copy file composer dahulu agar caching layer efisien
+COPY composer.json composer.lock ./
+
+# 2. Jalankan install vendor
+RUN composer install --no-interaction --no-dev --optimize-autoloader
+
+# 3. Copy seluruh file project (termasuk folder web, models, dll)
+COPY . .
+
+# 4. Beri izin folder untuk runtime dan assets (cegah Error 500)
+RUN mkdir -p runtime web/assets && chmod -R 777 runtime web/assets
+
+# ----------------------------
+
 EXPOSE 80
 
 CMD ["php", "-S", "0.0.0.0:80", "-t", "web"]
-#CMD ["tail", "-f", "/dev/null"]
