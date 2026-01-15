@@ -11,7 +11,7 @@
     ```sh
     docker compose up -d --build
     ```
--   Buka **docker ps** pastikan semuanya berjalan
+-   Jalankan perintah **docker ps** pastikan semuanya berjalan
 -   Pada browser buka **http://IP** aplikasi yii, **http://IP:9090** prometheus dan **http://IP:3001** grafana
 
 ## Setup Monitoring
@@ -29,7 +29,7 @@
 -   Kolom **Find and Import....**, masukkan ID: **1860** > **Load**
 -   Klik **Import**
 
-# Tes volume local agak data tidak hilang ketika container dihapus
+# Tes volume local agar data tidak hilang ketika container dihapus
 -   Buat tabel atau data
 
     ```sh
@@ -65,10 +65,3 @@
 
 
 
-
-
-
-
-
-
--   
